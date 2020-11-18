@@ -28,11 +28,11 @@
 void fs_cat_size_bytes(char const *filepath)
 {
     int size = 0; 
-    char buff[5];
+    char buff[100];
 
     int fd = open(filepath, O_RDONLY);
 
-    size = read(fd, buff, 5);
+    size = read(fd, buff, 100);
     write(1, buff, size);
     close(fd);
     printf("%s", buff);
